@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>🌟Even or Odd 🌟</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color:#DAF7A6 ; 
+            text-align: center;
+            color: #fff; /* Text color */
+        }
+
+        h1 {
+            background-color: #ff7f50;
+            color: white;
+            padding: 20px;
+            width: 50%;
+            border-radius: 15px;
+            font-size: 50px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out; /* Add animation */
+        }
+
+        /* Keyframes for fadeInUp animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="number"] {
+            padding: 30px;
+            font-size:40px;
+            border: 2px solid #ff7f50;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: 20%;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #FFFF; /* Dark input background color */
+            color: Black; /* Input text color */
+        }
+
+        input[type="submit"] {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 40px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 60px;
+            color: #ff7f50;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out; /* Add animation */
+        }
+
+        /* Keyframes for fadeIn animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <center>
+        <h1>🌟Even or Odd 🌟</h1>
+        <form method="POST">
+            {% csrf_token %}
+	    <br>
+            <input type="number" name="num" placeholder="Enter a Number" required/>
+            <br>
+            <input type="submit" value="Check"/>
+        </form>
+        <br>
+        <h2>{{ msg }}</h2>
+    </center>
+</body>
+</html>
+
+{% endblock %}

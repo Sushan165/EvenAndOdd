@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<html>
+	<style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #DAF7A6; 
+            text-align: center;
+            color: #fff; /* Text color */
+        }
+     h1 {
+            background-color:#EF3912;
+            color: white;
+            padding: 20px;
+            width: 50%;
+            border-radius: 15px;
+            font-size: 50px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out; /* Add animation */
+        }
+        h2 {
+            font-size: 60px;
+            color:#EF3912;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out; /* Add animation */
+        }
+	</style>
+	</head>
+	<body>
+	<h1> Login Page </h1>
+	<form method="POST">
+	{% csrf_token %}
+	<input type="email" name="un" placeholder="Enter email address" />
+	<br><br>
+	<input type="password" name="pw" placeholder="Enter password address" />
+	<br><br>
+	<input type="submit" value=" login" />
+	</form>
+	<h2>{{ msg }}</h2>
+	</body>
+	</html>
+{% endblock %}
